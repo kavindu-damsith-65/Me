@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kavindu-damsith-65.github.io/Me/sitemap.xml

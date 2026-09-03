@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(936 62) rotate(125) scale(665 665)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5B8FFF" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#050816" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#C9DAFF" stroke-opacity=".09"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#050816"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <circle cx="1034" cy="131" r="56" fill="none" stroke="#78ABFF" stroke-width="2"/>
+  <circle cx="1034" cy="131" r="85" fill="none" stroke="#DCE7FF" stroke-opacity=".18"/>
+  <text x="76" y="104" fill="#8DB8FF" font-family="monospace" font-size="22" letter-spacing="4">FULL-STACK DEVELOPER · SRI LANKA</text>
+  <text x="72" y="292" fill="#F7F9FF" font-family="Arial, sans-serif" font-size="100" font-weight="700" letter-spacing="-5">KAVINDU</text>
+  <text x="72" y="397" fill="#F7F9FF" font-family="Arial, sans-serif" font-size="100" font-weight="700" letter-spacing="-5">DAMSITH</text>
+  <text x="78" y="490" fill="#B6C4DE" font-family="Arial, sans-serif" font-size="31">Full-stack · Live products · Intelligent systems</text>
+  <path d="M78 548h1044" stroke="#DCE7FF" stroke-opacity=".2"/>
+  <text x="78" y="590" fill="#F7F9FF" font-family="monospace" font-size="20">kavindu-damsith-65.github.io/Me</text>
+  <text x="1084" y="590" fill="#8DB8FF" font-family="monospace" font-size="20">KD/</text>
+</svg>

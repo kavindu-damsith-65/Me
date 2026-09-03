@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050816" />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      name="description"
+      content="Portfolio of Kavindu Damsith — a full-stack developer building live web products, cloud-ready platforms, and applied AI experiences."
+    />
+    <meta name="author" content="Kavindu Damsith" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://kavindu-damsith-65.github.io/Me/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Kavindu Damsith" />
+    <meta property="og:title" content="Kavindu Damsith — Full-stack Developer" />
+    <meta
+      property="og:description"
+      content="Live web products, cloud-ready platforms, and intelligent software — designed and built end to end."
+    />
+    <meta property="og:url" content="https://kavindu-damsith-65.github.io/Me/" />
+    <meta property="og:image" content="https://kavindu-damsith-65.github.io/Me/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Kavindu Damsith — Full-stack, cloud, and AI developer" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kavindu Damsith — Full-stack Developer" />
+    <meta
+      name="twitter:description"
+      content="Live web products, cloud-ready platforms, and intelligent software — designed and built end to end."
+    />
+    <meta name="twitter:image" content="https://kavindu-damsith-65.github.io/Me/og-image.png" />
+
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      ;(() => {
+        let savedTheme = null
+        try {
+          savedTheme = localStorage.getItem('kd-theme')
+        } catch {
+          // Storage can be unavailable in strict privacy modes.
+        }
+        const theme = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'dark'
+        document.documentElement.dataset.theme = theme
+        document
+          .querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', theme === 'dark' ? '#050816' : '#f4f7ff')
+      })()
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kavindu Damsith",
+        "url": "https://kavindu-damsith-65.github.io/Me/",
+        "image": "https://kavindu-damsith-65.github.io/Me/images/kavindu-portrait.jpg",
+        "jobTitle": "Full-stack Developer",
+        "description": "Full-stack developer focused on live web products, cloud-ready platforms, and applied AI experiences.",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Moratuwa"
+        },
+        "sameAs": [
+          "https://github.com/kavindu-damsith-65",
+          "https://www.linkedin.com/in/kavindu-damsith-86696722a/"
+        ],
+        "knowsAbout": ["Full-stack development", "Cloud computing", "Deep learning", "Computer vision"]
+      }
+    </script>
+    <title>Kavindu Damsith — Full-stack Developer</title>
+  </head>
+  <body>
+    <noscript>This portfolio needs JavaScript enabled to display its interactive experience.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

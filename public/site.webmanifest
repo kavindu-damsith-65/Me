@@ -1,0 +1,17 @@
+{
+  "name": "Kavindu Damsith — Portfolio",
+  "short_name": "Kavindu",
+  "description": "Full-stack developer building live web products, cloud-ready platforms, and applied AI experiences.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#050816",
+  "theme_color": "#050816",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
