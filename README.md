@@ -1,19 +1,5 @@
 # Kavindu Damsith — Portfolio
 
-A production-ready personal portfolio for Kavindu Damsith, built as a fast static site with React, TypeScript, Vite, and Framer Motion. It has no database and does not send form data to a third party.
-
-## What is included
-
-- Responsive single-page experience for desktop, tablet, and mobile
-- Dark and light themes with saved preference
-- Accessible navigation, keyboard focus, semantic markup, and reduced-motion support
-- Filterable project case studies based on verified public work and the active Maple Wraps build
-- Optimized local portrait photography and a real Maple Wraps project visual
-- Scroll progress, reveal motion, custom project visuals, and subtle pointer interaction
-- Contact form that prepares a message in the visitor's email app
-- SEO metadata, JSON-LD, sitemap, robots file, web manifest, favicon, and social preview
-- GitHub Pages deployment workflow and Vercel headers
-- Friendly 404 redirect for static hosting
 
 ## Local development
 
