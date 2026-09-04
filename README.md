@@ -61,7 +61,7 @@ Global styling and theme tokens live in:
 
 `src/styles.css`
 
-Portfolio image assets live in `public/images/`. The two portraits credit Chanuka Bandara Photography in the interface; confirm the photographer's publication terms before launch.
+Portfolio image assets live in `public/images/`. Confirm the publication terms for both portraits before launch.
 
 If the production domain changes, update the canonical, Open Graph, sitemap, and JSON-LD URLs in `index.html`, `public/robots.txt`, and `public/sitemap.xml`.
 

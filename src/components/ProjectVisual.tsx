@@ -1,4 +1,14 @@
-import { ArrowUpRight, BookOpen, Braces, Cpu, Sparkles, Utensils } from 'lucide-react'
+import {
+  Activity,
+  ArrowUpRight,
+  AudioLines,
+  BookOpen,
+  GraduationCap,
+  HeartPulse,
+  Languages,
+  Ticket,
+  Utensils,
+} from 'lucide-react'
 import type { ProjectVisual as ProjectVisualType } from '../data/portfolio'
 
 interface ProjectVisualProps {
@@ -67,20 +77,6 @@ function ForknetVisual() {
   )
 }
 
-function UpscaleVisual() {
-  return (
-    <div className="project-visual visual-upscale" aria-hidden="true">
-      <div className="compare-window">
-        <div className="compare-side compare-before"><span>BEFORE</span></div>
-        <div className="compare-side compare-after"><span>AFTER</span></div>
-        <div className="compare-handle"><span>↔</span></div>
-        <div className="resolution-pill"><Sparkles size={13} /> 4K enhanced</div>
-      </div>
-      <div className="upscale-progress"><i /></div>
-    </div>
-  )
-}
-
 function LibraryVisual() {
   return (
     <div className="project-visual visual-library" aria-hidden="true">
@@ -114,39 +110,76 @@ function PlateVisual() {
   )
 }
 
-function CompilerVisual() {
+function HealthVisual() {
   return (
-    <div className="project-visual visual-compiler" aria-hidden="true">
-      <div className="terminal-bar"><span><i /><i /><i /></span><small>rpal / evaluate</small><Braces size={15} /></div>
-      <div className="terminal-code">
-        <p><b>let</b> square = <b>fn</b> x . x * x</p>
-        <p><b>in</b> square 8</p>
-        <p className="terminal-result"><span>→</span> 64</p>
-      </div>
-      <div className="ast-tree">
-        <span>γ</span>
-        <div><span>λ</span><span>τ</span></div>
-        <div><span>x</span><span>*</span><span>8</span></div>
+    <div className="project-visual visual-health" aria-hidden="true">
+      <div className="health-window">
+        <div className="health-head"><span><HeartPulse size={15} /> HealthLink</span><i>CARE HUB</i></div>
+        <div className="health-grid">
+          <div className="mri-panel">
+            <span>MRI ANALYSIS</span>
+            <div className="mri-scan"><i /><b /></div>
+            <small><Activity size={12} /> Segmentation ready</small>
+          </div>
+          <div className="health-metrics">
+            <div><small>NEXT APPOINTMENT</small><strong>09:30</strong><span>Dr. Silva</span></div>
+            <div><small>REPORT STATUS</small><strong>Ready</strong><span>Secure record</span></div>
+          </div>
+        </div>
       </div>
     </div>
   )
 }
 
-function ChipVisual() {
+function SignVisual() {
   return (
-    <div className="project-visual visual-chip" aria-hidden="true">
-      <div className="chip-grid" />
-      <svg className="circuit-lines" viewBox="0 0 420 250">
-        <path d="M0 58h98l27 27h46M420 48h-78l-28 37h-61M0 196h112l22-30h37M420 202h-92l-26-36h-49" />
-        <path d="M112 0v46l39 39M310 0v43l-34 42M101 250v-47l50-37M326 250v-52l-50-32" />
-      </svg>
-      <div className="processor-chip">
-        <Cpu size={32} />
-        <strong>NANO</strong>
-        <span>4-BIT PROCESSOR</span>
+    <div className="project-visual visual-sign" aria-hidden="true">
+      <div className="sign-stage">
+        <div className="sign-top"><span><Languages size={15} /> LIVE TRANSLATION</span><i>CV / ACTIVE</i></div>
+        <div className="gesture-frame">
+          <span className="gesture-palm" />
+          <i className="gesture-point gesture-one" />
+          <i className="gesture-point gesture-two" />
+          <i className="gesture-point gesture-three" />
+          <i className="gesture-line gesture-line-one" />
+          <i className="gesture-line gesture-line-two" />
+        </div>
+        <div className="translation-result"><AudioLines size={17} /><span><small>RECOGNISED</small><strong>Hello</strong></span><b>98%</b></div>
       </div>
-      <div className="binary binary-one">0010 1011</div>
-      <div className="binary binary-two">ALU / REG / ROM</div>
+    </div>
+  )
+}
+
+function LearningVisual() {
+  return (
+    <div className="project-visual visual-learning" aria-hidden="true">
+      <div className="learning-shell">
+        <div className="learning-sidebar"><GraduationCap size={22} /><i /><i /><i /></div>
+        <div className="learning-main">
+          <div className="learning-head"><span>Learning path</span><b>72%</b></div>
+          <div className="course-progress"><i /></div>
+          <div className="lesson-card active"><span>01</span><div><strong>Core concepts</strong><small>Completed</small></div><b>✓</b></div>
+          <div className="lesson-card"><span>02</span><div><strong>Guided practice</strong><small>In progress</small></div><b>→</b></div>
+          <div className="lesson-card locked"><span>03</span><div><strong>Final assessment</strong><small>Unlocks next</small></div><b>•</b></div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function CinemaVisual() {
+  const seats = Array.from({ length: 28 }, (_, index) => index)
+
+  return (
+    <div className="project-visual visual-cinema" aria-hidden="true">
+      <div className="cinema-shell">
+        <div className="cinema-head"><span><Ticket size={16} /> SELECT SEATS</span><b>19:30</b></div>
+        <div className="cinema-screen">SCREEN</div>
+        <div className="seat-map">
+          {seats.map((seat) => <i key={seat} className={[9, 10, 16].includes(seat) ? 'selected' : [4, 18, 23].includes(seat) ? 'taken' : ''} />)}
+        </div>
+        <div className="cinema-total"><span>3 seats selected</span><strong>LKR 4,500</strong></div>
+      </div>
     </div>
   )
 }
@@ -154,9 +187,10 @@ function ChipVisual() {
 export function ProjectVisual({ type }: ProjectVisualProps) {
   if (type === 'maple') return <MapleVisual />
   if (type === 'forknet') return <ForknetVisual />
-  if (type === 'upscale') return <UpscaleVisual />
   if (type === 'plate') return <PlateVisual />
   if (type === 'library') return <LibraryVisual />
-  if (type === 'compiler') return <CompilerVisual />
-  return <ChipVisual />
+  if (type === 'health') return <HealthVisual />
+  if (type === 'sign') return <SignVisual />
+  if (type === 'learning') return <LearningVisual />
+  return <CinemaVisual />
 }

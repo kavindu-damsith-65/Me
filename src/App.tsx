@@ -10,9 +10,14 @@ import {
   ArrowRight,
   ArrowUp,
   ArrowUpRight,
+  BrainCircuit,
   Check,
+  CloudCog,
+  Code2,
   Clock3,
   Copy,
+  GraduationCap,
+  LockKeyhole,
   Mail,
   MapPin,
   Menu,
@@ -28,11 +33,14 @@ import { Reveal } from './components/Reveal'
 import {
   achievements,
   capabilities,
+  education,
   journey,
   marqueeItems,
   navItems,
   profile,
+  projectArchive,
   projects,
+  type ProjectArchiveItem,
   type ProjectCategory,
 } from './data/portfolio'
 
@@ -89,6 +97,53 @@ function useSriLankaTime() {
   return time
 }
 
+function CapabilityVisual({ index }: { index: number }) {
+  if (index === 0) {
+    return (
+      <div className="capability-visual capability-visual-product" aria-hidden="true">
+        <div className="capability-visual-bar"><span><i /><i /><i /></span><small>PRODUCT / LIVE</small></div>
+        <div className="product-wireframe">
+          <div className="product-sidebar"><i /><i /><i /></div>
+          <div className="product-canvas">
+            <span className="product-heading" />
+            <span className="product-copy" />
+            <div><i /><i /></div>
+          </div>
+          <span className="product-cursor"><Code2 size={15} /></span>
+        </div>
+      </div>
+    )
+  }
+
+  if (index === 1) {
+    return (
+      <div className="capability-visual capability-visual-cloud" aria-hidden="true">
+        <div className="capability-visual-bar"><span><i className="status-pulse" /> HEALTHY</span><small>3 SERVICES</small></div>
+        <div className="cloud-map">
+          <span className="cloud-node cloud-node-api">API</span>
+          <span className="cloud-node cloud-node-core"><CloudCog size={25} /></span>
+          <span className="cloud-node cloud-node-db">DB</span>
+          <i className="cloud-path cloud-path-one" />
+          <i className="cloud-path cloud-path-two" />
+          <span className="cloud-packet cloud-packet-one" />
+          <span className="cloud-packet cloud-packet-two" />
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="capability-visual capability-visual-ai" aria-hidden="true">
+      <div className="capability-visual-bar"><span><i className="status-pulse" /> MODEL ACTIVE</span><small>98.4%</small></div>
+      <div className="ai-field">
+        {Array.from({ length: 12 }, (_, point) => <i key={point} />)}
+        <span className="ai-core"><BrainCircuit size={29} /></span>
+        <span className="ai-scan" />
+      </div>
+    </div>
+  )
+}
+
 function App() {
   const reduceMotion = useReducedMotion()
   const activeSection = useActiveSection()
@@ -97,12 +152,16 @@ function App() {
   const [filter, setFilter] = useState<ProjectFilter>('All')
   const [copied, setCopied] = useState(false)
   const [messagePrepared, setMessagePrepared] = useState(false)
+  const [selectedProject, setSelectedProject] = useState<ProjectArchiveItem | null>(null)
   const [showBackToTop, setShowBackToTop] = useState(false)
   const [theme, setTheme] = useState<Theme>(() =>
     document.documentElement.dataset.theme === 'light' ? 'light' : 'dark',
   )
   const menuButtonRef = useRef<HTMLButtonElement>(null)
   const mobileNavRef = useRef<HTMLElement>(null)
+  const modalRef = useRef<HTMLElement>(null)
+  const modalCloseRef = useRef<HTMLButtonElement>(null)
+  const modalTriggerRef = useRef<HTMLElement | null>(null)
   const { scrollYProgress } = useScroll()
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 130,
@@ -115,6 +174,13 @@ function App() {
       filter === 'All'
         ? projects
         : projects.filter((project) => project.categories.includes(filter)),
+    [filter],
+  )
+  const visibleArchive = useMemo(
+    () =>
+      filter === 'All'
+        ? projectArchive
+        : projectArchive.filter((project) => project.categories.includes(filter)),
     [filter],
   )
 
@@ -177,6 +243,52 @@ function App() {
   }, [menuOpen])
 
   useEffect(() => {
+    if (!selectedProject) return
+
+    document.body.style.overflow = 'hidden'
+    const backgroundElements = [
+      document.querySelector('.site-header'),
+      document.querySelector('main'),
+      document.querySelector('footer'),
+    ].filter((element): element is HTMLElement => element instanceof HTMLElement)
+    backgroundElements.forEach((element) => { element.inert = true })
+    window.requestAnimationFrame(() => modalCloseRef.current?.focus())
+
+    const handleModalKeydown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault()
+        setSelectedProject(null)
+        return
+      }
+
+      if (event.key !== 'Tab') return
+      const focusable = modalRef.current
+        ? [...modalRef.current.querySelectorAll<HTMLElement>('a[href], button:not([disabled])')]
+        : []
+      if (focusable.length === 0) return
+
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
+    }
+
+    document.addEventListener('keydown', handleModalKeydown)
+
+    return () => {
+      document.body.style.overflow = ''
+      backgroundElements.forEach((element) => { element.inert = false })
+      document.removeEventListener('keydown', handleModalKeydown)
+      window.requestAnimationFrame(() => modalTriggerRef.current?.focus())
+    }
+  }, [selectedProject])
+
+  useEffect(() => {
     if (reduceMotion || !window.matchMedia('(pointer: fine)').matches) return
 
     const updateSpotlight = (event: PointerEvent) => {
@@ -224,6 +336,14 @@ function App() {
 
     setMessagePrepared(true)
     window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`
+  }
+
+  const openProjectDetails = (project: ProjectArchiveItem) => {
+    modalTriggerRef.current = document.activeElement instanceof HTMLElement
+      ? document.activeElement
+      : null
+    setMenuOpen(false)
+    setSelectedProject(project)
   }
 
   return (
@@ -412,7 +532,6 @@ function App() {
                   <div>
                     <strong>Kavindu</strong>
                     <span>Damsith</span>
-                    <small>Portrait · {profile.photoCredit}</small>
                   </div>
                   <span className="portrait-arrow"><ArrowUpRight size={19} /></span>
                 </div>
@@ -485,7 +604,6 @@ function App() {
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>{profile.photoCredit}</figcaption>
             </figure>
             <div className="about-editorial-copy">
               <span className="section-index">HOW I WORK</span>
@@ -501,11 +619,31 @@ function App() {
                 <span>03 · Polish what people feel</span>
               </div>
             </div>
+
+            <div className="education-panel" aria-labelledby="education-title">
+              <div className="education-heading">
+                <span id="education-title"><GraduationCap size={18} /> Education</span>
+                <p>Strong fundamentals, carried into every system I build.</p>
+              </div>
+              <div className="education-grid">
+                {education.map((item, index) => (
+                  <article className="education-item" key={item.qualification}>
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                    <div>
+                      <small>{item.period}</small>
+                      <h4>{item.qualification}</h4>
+                      <p>{item.institution}</p>
+                      <em>{item.note}</em>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
           </Reveal>
 
           <div className="about-stats">
             <Reveal className="stat-block" delay={0.05}>
-              <strong>20+</strong><span>public repositories</span><small>and counting</small>
+              <strong>48</strong><span>GitHub repositories</span><small>public + private work</small>
             </Reveal>
             <Reveal className="stat-block" delay={0.1}>
               <strong>03</strong><span>engineering lenses</span><small>product · cloud · AI</small>
@@ -519,6 +657,7 @@ function App() {
             {capabilities.map((capability, index) => (
               <Reveal key={capability.title} className="capability-card" delay={index * 0.08}>
                 <div className="capability-top"><span>{capability.number}</span><ArrowUpRight size={18} /></div>
+                <CapabilityVisual index={index} />
                 <h3>{capability.title}</h3>
                 <p>{capability.description}</p>
                 <div className="tool-list">
@@ -535,7 +674,7 @@ function App() {
               <span className="section-index">02 / SELECTED WORK</span>
               <h2 id="work-title">Ideas, shipped as <em>systems.</em></h2>
             </div>
-            <p>Selected work across a live customer platform, real-time AI, mobile ecosystems, language tooling, and full-stack engineering.</p>
+            <p>Twenty-five selected builds from 48 repositories—spanning a live customer platform, real-time AI, mobile products, cloud infrastructure, and computer systems.</p>
           </Reveal>
 
           <Reveal className="project-filters" delay={0.08}>
@@ -569,7 +708,10 @@ function App() {
                 >
                   <div className="project-card-head">
                     <span>{project.number}</span>
-                    <span>{project.eyebrow}</span>
+                    <div className="project-card-meta">
+                      <span>{project.eyebrow}</span>
+                      {project.private && <small><LockKeyhole size={11} /> Private repository</small>}
+                    </div>
                   </div>
                   <ProjectVisual type={project.visual} />
                   <div className="project-content">
@@ -593,11 +735,59 @@ function App() {
             </AnimatePresence>
           </motion.div>
 
+          {visibleArchive.length > 0 && (
+            <Reveal className="project-archive" delay={0.08}>
+              <div className="archive-heading">
+                <div>
+                  <span>PROJECT INDEX</span>
+                  <h3>More systems, less filler.</h3>
+                </div>
+                <p>{String(visibleProjects.length + visibleArchive.length).padStart(2, '0')} projects in this view</p>
+              </div>
+
+              <motion.div className="archive-list" layout>
+                <AnimatePresence mode="popLayout">
+                  {visibleArchive.map((project, index) => (
+                    <motion.article
+                      layout
+                      key={project.id}
+                      className="archive-row"
+                      initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={reduceMotion ? undefined : { opacity: 0, y: 10 }}
+                      transition={{ duration: 0.32, delay: Math.min(index * 0.025, 0.14) }}
+                    >
+                      <span className="archive-number">{project.number}</span>
+                      <div className="archive-copy">
+                        <div className="archive-title-line">
+                          <h4>{project.title}</h4>
+                          {project.private && <span className="private-badge"><LockKeyhole size={11} /> Private</span>}
+                        </div>
+                        <p>{project.description}</p>
+                      </div>
+                      <div className="archive-tech">
+                        {project.technologies.slice(0, 3).map((technology) => <span key={technology}>{technology}</span>)}
+                      </div>
+                      <button
+                        className="archive-read-more"
+                        type="button"
+                        onClick={() => openProjectDetails(project)}
+                        aria-label={`Read more about ${project.title}`}
+                      >
+                        <span>Read more</span><ArrowUpRight size={17} />
+                      </button>
+                    </motion.article>
+                  ))}
+                </AnimatePresence>
+              </motion.div>
+            </Reveal>
+          )}
+
           <Reveal className="github-banner">
             <div className="github-mark"><GitHubIcon size={28} /></div>
             <div>
-              <span>MORE ON GITHUB</span>
-              <h3>Experiments, systems, and everything in between.</h3>
+              <span>48 REPOSITORIES · CURATED HERE</span>
+              <h3>Public code on GitHub. Private case studies available on request.</h3>
             </div>
             <a href={profile.github} target="_blank" rel="noreferrer">
               Explore all repositories <ArrowUpRight size={18} />
@@ -708,6 +898,101 @@ function App() {
           <span>Built in Sri Lanka · Available worldwide</span>
         </div>
       </footer>
+
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            className="case-study-backdrop"
+            role="presentation"
+            initial={reduceMotion ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={reduceMotion ? undefined : { opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onMouseDown={(event) => {
+              if (event.target === event.currentTarget) setSelectedProject(null)
+            }}
+          >
+            <motion.section
+              ref={modalRef}
+              className="case-study-modal"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="case-study-title"
+              aria-describedby="case-study-description"
+              initial={reduceMotion ? false : { opacity: 0, y: 28, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={reduceMotion ? undefined : { opacity: 0, y: 18, scale: 0.98 }}
+              transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div className="case-study-topline">
+                <div>
+                  <span>{selectedProject.number} · PROJECT DETAIL</span>
+                  {selectedProject.private && <span className="private-badge"><LockKeyhole size={11} /> Private repository</span>}
+                </div>
+                <button
+                  ref={modalCloseRef}
+                  className="modal-close"
+                  type="button"
+                  onClick={() => setSelectedProject(null)}
+                  aria-label="Close project details"
+                >
+                  <X size={19} />
+                </button>
+              </div>
+
+              <div className="case-study-body">
+                <span className="case-study-category">{selectedProject.categories.join(' · ')}</span>
+                <h2 id="case-study-title">{selectedProject.title}</h2>
+                <p id="case-study-description" className="case-study-lead">{selectedProject.description}</p>
+
+                <div className="case-study-profile" aria-label="Project profile">
+                  <div><small>ENGINEERING LENS</small><strong>{selectedProject.categories.join(' + ')}</strong></div>
+                  <div><small>CODE ACCESS</small><strong>{selectedProject.private ? 'Private case study' : 'Public repository'}</strong></div>
+                  <div><small>PROJECT SCOPE</small><strong>{selectedProject.highlights.length} focus areas · {selectedProject.technologies.length} technologies</strong></div>
+                </div>
+
+                <div className="case-study-overview">
+                  <span>PROJECT OVERVIEW</span>
+                  <p className="case-study-detail">{selectedProject.detail}</p>
+                </div>
+
+                <div className="case-study-highlights">
+                  <span>ENGINEERING BREAKDOWN</span>
+                  <ul>
+                    {selectedProject.highlights.map((highlight, index) => (
+                      <li key={highlight}><span>{String(index + 1).padStart(2, '0')}</span><p>{highlight}</p></li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="case-study-stack">
+                  <span>BUILT WITH</span>
+                  <div>{selectedProject.technologies.map((technology) => <span key={technology}>{technology}</span>)}</div>
+                </div>
+              </div>
+
+              <div className="case-study-footer">
+                <p>
+                  {selectedProject.private
+                    ? 'The source is private, but I can walk you through the architecture, decisions, and outcome.'
+                    : 'Explore the repository for implementation details and source history.'}
+                </p>
+                <a
+                  className="button button-primary"
+                  href={selectedProject.url}
+                  target={selectedProject.url.startsWith('#') ? undefined : '_blank'}
+                  rel={selectedProject.url.startsWith('#') ? undefined : 'noreferrer'}
+                  onClick={() => {
+                    if (selectedProject.url.startsWith('#')) setSelectedProject(null)
+                  }}
+                >
+                  {selectedProject.private ? 'Discuss this project' : 'View repository'} <ArrowUpRight size={17} />
+                </a>
+              </div>
+            </motion.section>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <AnimatePresence>
         {showBackToTop && (
