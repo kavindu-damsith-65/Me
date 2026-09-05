@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1584" height="396" viewBox="0 0 1584 396" role="img" aria-labelledby="title desc">
+  <title id="title">Kavindu Damsith</title>
+  <desc id="desc">Computer Science and Engineering, full-stack products, cloud systems, and applied AI.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#050914"/>
+      <stop offset="0.55" stop-color="#0A1730"/>
+      <stop offset="1" stop-color="#12376A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#4F86FF"/>
+      <stop offset="1" stop-color="#7CD7FF"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop stop-color="#4F86FF" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#4F86FF" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#AFC9FF" stroke-opacity="0.06"/>
+    </pattern>
+    <filter id="soft-glow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1584" height="396" fill="url(#background)"/>
+  <rect width="1584" height="396" fill="url(#grid)"/>
+  <circle cx="1350" cy="170" r="360" fill="url(#glow)"/>
+
+  <g fill="none" stroke="#78AEFF">
+    <circle cx="1350" cy="198" r="134" stroke-opacity="0.18"/>
+    <circle cx="1350" cy="198" r="96" stroke-opacity="0.26"/>
+    <circle cx="1350" cy="198" r="54" stroke-opacity="0.38"/>
+    <path d="M1170 198h360M1350 18v360" stroke-opacity="0.12"/>
+    <path d="M1220 68l260 260M1480 68l-260 260" stroke-opacity="0.08"/>
+    <path d="M1070 82h76l28 28h76M1050 306h96l36-36h76" stroke-opacity="0.34"/>
+  </g>
+
+  <g fill="#7CD7FF" filter="url(#soft-glow)">
+    <circle cx="1350" cy="64" r="4"/>
+    <circle cx="1446" cy="198" r="4"/>
+    <circle cx="1174" cy="110" r="4"/>
+    <circle cx="1182" cy="270" r="4"/>
+  </g>
+
+  <rect x="392" y="54" width="5" height="286" rx="2.5" fill="url(#accent)"/>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="426" y="54" width="252" height="32" rx="16" fill="#10284F" stroke="#4F86FF" stroke-opacity="0.7"/>
+    <circle cx="447" cy="70" r="5" fill="#78C7FF"/>
+    <text x="463" y="76" fill="#C7D9FC" font-size="12" font-weight="700" letter-spacing="1.8">OPEN TO COLLABORATION</text>
+
+    <text x="426" y="157" fill="#F5F8FF" font-size="62" font-weight="700" letter-spacing="-1.8">Kavindu Damsith</text>
+    <text x="429" y="205" fill="#A9C7FF" font-size="22" font-weight="700">Computer Science &amp; Engineering</text>
+    <text x="429" y="250" fill="#D7E2F7" font-size="18" font-weight="700" letter-spacing="2.2">FULL-STACK PRODUCTS  /  CLOUD SYSTEMS  /  APPLIED AI</text>
+
+    <rect x="426" y="286" width="254" height="40" rx="20" fill="#10284F" stroke="#315F9F"/>
+    <text x="451" y="312" fill="#E2EBFF" font-size="15" font-weight="700">KAVINDUDAMSITH.TECH</text>
+
+    <text x="1305" y="217" fill="#F3F7FF" font-size="55" font-weight="700" letter-spacing="-2">KD</text>
+  </g>
+</svg>

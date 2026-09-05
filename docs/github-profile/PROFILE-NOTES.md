@@ -1,6 +1,6 @@
 # GitHub profile update
 
-Prepared for `kavindu-damsith-65/kavindu-damsith-65`. The adjacent README and `assets/banner.svg` are a local draft, not published to the profile repository.
+Source mirror for the published `kavindu-damsith-65/kavindu-damsith-65` profile. Keep the adjacent README and assets in sync with the profile repository.
 
 ## Suggested profile fields
 
@@ -20,7 +20,7 @@ Lead with PlateShare, healthLink, VsrPipelineV2, trainGpsv3, routeOptima, and th
 - Connects the profile directly to the custom portfolio domain, LinkedIn, and the corrected Gmail address.
 - Replaces placeholder social destinations and generic claims with specific work and contributions.
 - Features substantial projects and all six competition results listed in both CVs.
-- Uses a repository-owned blue banner with readable text and no external statistics widgets.
+- Uses repository-owned blue banner and metric artwork, plus live technology and contact badges.
 - Attributes Antikythera as an internship contribution, rather than claiming ownership of the entire tool.
 
 ## Sources and publication
@@ -29,4 +29,4 @@ Content was checked against the two CV PDFs supplied in the conversation, the cu
 
 The existing profile has empty bio, website, and location fields. Its README includes a blank Twitter destination and placeholder LinkedIn, Stack Overflow, and Kaggle paths.
 
-To publish, apply README.md and assets/banner.svg to the root of the profile repository while preserving its other files. The website repository's README is separate. A CV download link can be added after the next CV revision has been selected for publication.
+The website repository's README is separate. A CV download link can be added after the next CV revision has been selected for publication.
