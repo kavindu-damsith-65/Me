@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+  <title id="title">Kavindu Damsith</title>
+  <desc id="desc">Full-stack development, cloud, and applied AI. Based in Sri Lanka.</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1">
+      <stop stop-color="#080e20"/>
+      <stop offset="1" stop-color="#132953"/>
+    </linearGradient>
+    <linearGradient id="accent">
+      <stop stop-color="#5b8dff"/>
+      <stop offset="1" stop-color="#78c7ff"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#91b9ff" stroke-opacity=".07"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="330" rx="24" fill="url(#background)"/>
+  <rect width="1200" height="330" rx="24" fill="url(#grid)"/>
+  <g fill="none" stroke="#73a7ff" stroke-opacity=".22">
+    <circle cx="1040" cy="165" r="110"/>
+    <circle cx="1040" cy="165" r="82"/>
+    <path d="M875 165h330M1040 25v280"/>
+  </g>
+  <circle cx="1040" cy="55" r="5" fill="#7baaff"/>
+  <circle cx="1122" cy="165" r="5" fill="#7baaff"/>
+  <rect x="48" y="53" width="5" height="220" rx="2" fill="url(#accent)"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="76" y="83" fill="#9dbdff" font-size="15" letter-spacing="3">FULL-STACK · CLOUD · APPLIED AI</text>
+    <text x="72" y="161" fill="#f3f7ff" font-size="62" font-weight="700" letter-spacing="-2">Kavindu Damsith</text>
+    <text x="76" y="207" fill="#c9d6ef" font-size="23">Building useful products, from interface to infrastructure.</text>
+    <text x="76" y="268" fill="#9dbdff" font-size="16">SRI LANKA</text>
+    <text x="208" y="268" fill="#788ead" font-size="16">/</text>
+    <text x="231" y="268" fill="#c9d6ef" font-size="16">kavindudamsith.tech</text>
+    <text x="996" y="180" fill="#8ebaff" font-size="45" font-weight="700">KD</text>
+  </g>
+</svg>

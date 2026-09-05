@@ -674,7 +674,7 @@ function App() {
               <span className="section-index">02 / SELECTED WORK</span>
               <h2 id="work-title">Ideas, shipped as <em>systems.</em></h2>
             </div>
-            <p>Twenty-five selected builds from 48 repositories—spanning a live customer platform, real-time AI, mobile products, cloud infrastructure, and computer systems.</p>
+            <p>{projects.length + projectArchive.length} selected builds—spanning a live customer platform, real-time AI, mobile products, cloud infrastructure, and computer systems.</p>
           </Reveal>
 
           <Reveal className="project-filters" delay={0.08}>
@@ -820,12 +820,15 @@ function App() {
           </div>
 
           <div className="achievement-heading">
-            <Reveal><span className="section-index">SELECTED MILESTONES</span></Reveal>
+            <Reveal><h3 className="section-index">COMPETITION AWARDS &amp; PLACEMENTS</h3></Reveal>
           </div>
           <div className="achievement-grid">
             {achievements.map((achievement, index) => (
               <Reveal key={achievement.label} className="achievement-card" delay={index * 0.07}>
-                <div className="achievement-value">{achievement.value}</div>
+                <div className="achievement-topline">
+                  <div className="achievement-value">{achievement.value}</div>
+                  <span className="achievement-year">{achievement.year}</span>
+                </div>
                 <span>{achievement.label}</span>
                 <h3>{achievement.title}</h3>
                 <p>{achievement.description}</p>

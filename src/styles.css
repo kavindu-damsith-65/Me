@@ -2684,8 +2684,25 @@ p {
   box-shadow: 0 0 0 20px color-mix(in srgb, var(--surface-raised) 36%, transparent), 0 0 0 21px var(--line);
 }
 
+.achievement-topline {
+  display: flex;
+  margin-bottom: 38px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.achievement-year {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text-soft);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+}
+
 .achievement-value {
-  margin-bottom: 68px;
+  margin-bottom: 0;
   color: var(--accent-text);
   font-family: 'DM Mono', monospace;
   font-size: 3.8rem;
@@ -3138,7 +3155,7 @@ p {
   .journey-heading > p { max-width: 620px; }
   .achievement-grid { grid-template-columns: 1fr; }
   .achievement-card { min-height: 280px; }
-  .achievement-value { margin-bottom: 50px; }
+  .achievement-topline { margin-bottom: 30px; }
   .contact { width: min(100% - 24px, 720px); }
   .contact-panel { grid-template-columns: 1fr; }
   .contact-copy h2 { font-size: clamp(3.3rem, 11vw, 5.3rem); }

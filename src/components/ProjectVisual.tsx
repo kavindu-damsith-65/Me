@@ -2,7 +2,6 @@ import {
   Activity,
   ArrowUpRight,
   AudioLines,
-  BookOpen,
   GraduationCap,
   HeartPulse,
   Languages,
@@ -73,25 +72,6 @@ function ForknetVisual() {
         <path d="M0 42 C35 44, 40 18, 72 29 S118 49, 145 22 S186 5, 210 27 S257 50, 282 22 S325 35, 360 8" />
       </svg>
       <div className="metric-row"><span>Latency</span><strong>real-time</strong><span>Quality</span><strong>enhanced</strong></div>
-    </div>
-  )
-}
-
-function LibraryVisual() {
-  return (
-    <div className="project-visual visual-library" aria-hidden="true">
-      <div className="library-shell">
-        <div className="library-head">
-          <span><BookOpen size={16} /> My library</span>
-          <i />
-        </div>
-        <div className="study-progress">
-          <div><small>THIS WEEK</small><strong>12 topics</strong></div>
-          <span><b>72</b>%</span>
-        </div>
-        <div className="subject-card subject-card-one"><i>CS</i><div><strong>Algorithms</strong><small>8 chapters</small></div><b>→</b></div>
-        <div className="subject-card subject-card-two"><i>ML</i><div><strong>Deep Learning</strong><small>6 chapters</small></div><b>→</b></div>
-      </div>
     </div>
   )
 }
@@ -188,7 +168,6 @@ export function ProjectVisual({ type }: ProjectVisualProps) {
   if (type === 'maple') return <MapleVisual />
   if (type === 'forknet') return <ForknetVisual />
   if (type === 'plate') return <PlateVisual />
-  if (type === 'library') return <LibraryVisual />
   if (type === 'health') return <HealthVisual />
   if (type === 'sign') return <SignVisual />
   if (type === 'learning') return <LearningVisual />

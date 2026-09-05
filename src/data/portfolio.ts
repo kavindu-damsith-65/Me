@@ -22,7 +22,6 @@ export type ProjectVisual =
   | 'maple'
   | 'forknet'
   | 'plate'
-  | 'library'
   | 'health'
   | 'sign'
   | 'learning'
@@ -154,21 +153,6 @@ export const projects: Project[] = [
     visual: 'cinema',
     private: true,
   },
-  {
-    id: 'subject-library',
-    number: '08',
-    title: 'Subject Library',
-    eyebrow: 'Cross-platform learning',
-    description:
-      'A focused study-content app for organising subjects, topics, subtopics, and notes into a clear learning flow.',
-    detail:
-      'Pairs a Flutter client and persistent local preferences with authentication and a REST API backed by Express and MongoDB.',
-    technologies: ['Flutter', 'Dart', 'Express', 'MongoDB', 'JWT'],
-    categories: ['Mobile', 'Full stack'],
-    url: 'https://github.com/kavindu-damsith-65/subject_library',
-    linkLabel: 'View repository',
-    visual: 'library',
-  },
 ]
 
 export interface ProjectArchiveItem {
@@ -209,7 +193,7 @@ export const education = [
 export const projectArchive: ProjectArchiveItem[] = [
   {
     id: 'super-upscale-studio',
-    number: '09',
+    number: '08',
     title: 'Super Upscale Studio',
     description: 'A polished before-and-after workspace for AI video enhancement, comparison, progress, and export.',
     detail: 'An interface exploration for making a technically complex super-resolution workflow feel direct, visual, and understandable. The workspace keeps source media, enhancement settings, progress feedback, and output comparison in one focused flow.',
@@ -221,7 +205,7 @@ export const projectArchive: ProjectArchiveItem[] = [
   },
   {
     id: 'quote-designer',
-    number: '10',
+    number: '09',
     title: 'Quote Designer',
     description: 'Interactive floor, runner, and stage estimators with dynamic dimension diagrams and validation.',
     detail: 'A focused quotation experience created while evolving Maple Wraps, designed to turn physical measurements into a confident digital request. Separate calculation paths handle different products while immediate diagrams and validation reduce measurement mistakes before a quote is submitted.',
@@ -234,7 +218,7 @@ export const projectArchive: ProjectArchiveItem[] = [
   },
   {
     id: 'route-optima',
-    number: '11',
+    number: '10',
     title: 'Supply Chain · RouteOptima',
     description: 'An academic supply-chain system with customer, shop, order, route-assignment, dashboard, and payment flows.',
     detail: 'Built as a second-semester database project to reduce operational friction across ordering, fulfilment, and route coordination. The application connects customer actions to shop operations, payment records, route decisions, and management views through a relational data model.',
@@ -246,7 +230,7 @@ export const projectArchive: ProjectArchiveItem[] = [
   },
   {
     id: 'train-gps',
-    number: '12',
+    number: '11',
     title: 'TrainGPS Safety Intelligence',
     description: 'Railway GPS and geospatial analysis with ESP32 capture plus crack and location prediction experiments.',
     detail: 'A safety system that calculates location-based danger percentages from historical railway data while monitoring driver attention in real time. GPS readings captured through an ESP32 are combined with geospatial experiments so risk can be interpreted against where the train is currently travelling.',
@@ -258,7 +242,7 @@ export const projectArchive: ProjectArchiveItem[] = [
   },
   {
     id: 'ai-video-generation',
-    number: '13',
+    number: '12',
     title: 'AI Video Generation Studio',
     description: 'A script-to-media prototype combining a React workflow with diffusion and transformer services.',
     detail: 'A practice project for exploring how written prompts and scripts can drive generative-media pipelines through approachable web controls. It separates the React authoring experience from Python generation services, making the experimental pipeline easier to operate and extend.',
@@ -270,7 +254,7 @@ export const projectArchive: ProjectArchiveItem[] = [
   },
   {
     id: 'vegetable-vision',
-    number: '14',
+    number: '13',
     title: 'Vegetable Vision',
     description: 'A browser-based image-upload pipeline for vegetable recognition and visual results.',
     detail: 'YOLOv5 was retrained on a custom vegetable dataset, then wrapped in a lightweight Flask interface for practical browser-based inference. The project covers the complete path from dataset preparation and model training to uploaded-image prediction and visual results.',
@@ -282,7 +266,7 @@ export const projectArchive: ProjectArchiveItem[] = [
   },
   {
     id: 'rpal-interpreter',
-    number: '15',
+    number: '14',
     title: 'RPAL Interpreter',
     description: 'A language processor covering lexing, parsing, AST standardisation, environments, and CSE evaluation.',
     detail: 'An academic compiler project implementing the RPAL processing path from source program through an abstract syntax tree to CSE-machine execution. The implementation makes each transformation stage explicit, from lexical structure and parsing to standardized trees, environments, and final evaluation.',
@@ -294,7 +278,7 @@ export const projectArchive: ProjectArchiveItem[] = [
   },
   {
     id: 'nano-processor',
-    number: '16',
+    number: '15',
     title: 'NanoProcessor',
     description: 'A compact VHDL processor joining an ALU, registers, decoder, program ROM, control, and testbenches.',
     detail: 'A digital-systems build that turns processor fundamentals into synthesizable VHDL modules and repeatable Vivado simulations. Individual datapath and control components are assembled into a compact processor and verified with component-level testbenches.',
@@ -306,7 +290,7 @@ export const projectArchive: ProjectArchiveItem[] = [
   },
   {
     id: 'feature-flag-lab',
-    number: '17',
+    number: '16',
     title: 'Feature Flag Platform Lab',
     description: 'A Kubernetes comparison environment for FF4J, flagd/OpenFeature, Flagsmith, and Unleash.',
     detail: 'A deployment lab for comparing open feature-flag stacks under consistent Kubernetes and Kustomize conventions. Each platform is organized with repeatable manifests so operational behavior, configuration, and integration trade-offs can be evaluated on comparable ground.',
@@ -319,7 +303,7 @@ export const projectArchive: ProjectArchiveItem[] = [
   },
   {
     id: 'kubernetes-scaling',
-    number: '18',
+    number: '17',
     title: 'Kubernetes Scaling Challenge',
     description: 'Deployments for healthcare API services using HPA, VPA, ConfigMaps, CSI, and scripted rollout tooling.',
     detail: 'Cloud-native deployment work informed by internship experience building clusters, containerizing services, tuning resources, and observing workloads. The setup coordinates workload definitions, runtime configuration, storage integration, and both horizontal and vertical scaling policies.',
@@ -332,7 +316,7 @@ export const projectArchive: ProjectArchiveItem[] = [
   },
   {
     id: 'parallel-linked-lists',
-    number: '19',
+    number: '18',
     title: 'Concurrent Linked-List Benchmark',
     description: 'Serial, mutex, and read-write-lock implementations measured across controlled workloads and thread counts.',
     detail: 'A parallel-programming study comparing synchronization strategies while keeping initialization and workload generation outside timed operations. Multiple thread and operation mixes are executed consistently, exported to CSV, and visualized so lock overhead and workload behavior can be compared.',
@@ -345,7 +329,7 @@ export const projectArchive: ProjectArchiveItem[] = [
   },
   {
     id: 'xenzer-health',
-    number: '20',
+    number: '19',
     title: 'Xenzer Health Portal',
     description: 'A role-based healthcare portal for appointments, medical reports, doctors, rooms, and administration.',
     detail: 'A server-rendered healthcare system organizing patient-facing services and operational tools across distinct role-based areas. The portal brings appointments, medical records, doctor availability, rooms, and administrative actions into a connected PHP and MySQL application.',
@@ -357,7 +341,7 @@ export const projectArchive: ProjectArchiveItem[] = [
   },
   {
     id: 'vsr-streaming-console',
-    number: '21',
+    number: '20',
     title: 'VSR Streaming Console',
     description: 'A multi-surface video pipeline for upload, native-FPS preview, GPU streaming, telemetry, and real-time controls.',
     detail: 'A companion engineering environment for the wider ForkNetRT research effort. A Flask producer extracts source metadata with FFprobe, controls playback, exposes an MJPEG preview, and launches low-latency CUDA/NVENC streaming, while React and PySide interfaces surface video state and runtime metrics.',
@@ -369,7 +353,7 @@ export const projectArchive: ProjectArchiveItem[] = [
   },
   {
     id: 'antikythera',
-    number: '22',
+    number: '21',
     title: 'Antikythera Test Generator',
     description: 'Java tooling that analyses Spring controllers and their dependencies to support automated application test generation.',
     detail: 'Developed and tested during my Cloud Solutions International internship. Antikythera parses controller source with JavaParser, resolves repositories, interfaces, DTOs, annotations, and dependency graphs, then uses evaluators and generators to construct focused Spring test assets without assuming every application type is already packaged.',
@@ -381,7 +365,7 @@ export const projectArchive: ProjectArchiveItem[] = [
   },
   {
     id: 'openfeature-load-lab',
-    number: '23',
+    number: '22',
     title: 'OpenFeature Load Lab',
     description: 'A Spring Boot experiment for evaluating flagd-backed feature flags under highly concurrent access.',
     detail: 'A focused OpenFeature integration and load experiment built with Java 17. The application configures a TLS-connected flagd provider, exposes a reusable evaluation service, and runs repeated batches of 4,000 flag lookups through a controlled executor so response behavior and timing can be observed.',
@@ -393,7 +377,7 @@ export const projectArchive: ProjectArchiveItem[] = [
   },
   {
     id: 'iot-occupancy-console',
-    number: '24',
+    number: '23',
     title: 'IoT Occupancy Console',
     description: 'A PHP dashboard for registering connected components and receiving live occupancy and battery readings.',
     detail: 'An early end-to-end IoT web prototype that connects device-originated HTTP updates to a MySQL-backed operational dashboard. Components can be registered through the interface, while device endpoints update people counts and battery levels and return component-side configuration.',
@@ -401,18 +385,6 @@ export const projectArchive: ProjectArchiveItem[] = [
     technologies: ['PHP', 'JavaScript', 'MySQL', 'IoT', 'ESP'],
     categories: ['Full stack', 'Systems'],
     url: 'https://github.com/kavindu-damsith-65/technoBeasts',
-    linkLabel: 'Repository',
-  },
-  {
-    id: 'data-structures-lab',
-    number: '25',
-    title: 'Data Structures Laboratory',
-    description: 'A C++ implementation collection covering fundamental structures, algorithms, and their operational trade-offs.',
-    detail: 'A progressive laboratory repository moving from sorting and stack implementations through linked lists, binary search trees, heaps, hash tables, and graph problems. The exercises emphasize implementing structures directly and understanding how their behavior changes across common operations.',
-    highlights: ['Recursive and non-recursive quicksort', 'Array and linked-list stack implementations', 'BST, heap, and chained hash-table exercises', 'Graph algorithms and running-median practice'],
-    technologies: ['C++', 'Algorithms', 'Data Structures', 'Graphs'],
-    categories: ['Systems'],
-    url: 'https://github.com/kavindu-damsith-65/dataStructuresLabs',
     linkLabel: 'Repository',
   },
 ]
@@ -448,6 +420,7 @@ export const achievements = [
   {
     value: '01',
     label: 'MoraXtreme 9.0',
+    year: '2024',
     title: 'Finals champion',
     description:
       'Team White Lotus won the finals after placing first on the elimination scoreboard among 350+ teams.',
@@ -455,16 +428,42 @@ export const achievements = [
   {
     value: '01',
     label: 'CYPHER 23',
+    year: '2023',
     title: 'Hackathon champion',
     description:
       'Won the six-hour physical coding competition organised by the IEEE WIE affinity group at KDU.',
   },
   {
-    value: '48',
-    label: 'GitHub repositories',
-    title: 'A growing body of work',
+    value: '02',
+    label: 'Hackdoze 1.0',
+    year: '2021',
+    title: 'First runner-up',
     description:
-      'Public and private projects spanning full-stack engineering, mobile applications, AI/ML, cloud infrastructure, and computer systems.',
+      'Secured the first runner-up position at the Hackdoze 1.0 hackathon.',
+  },
+  {
+    value: '03',
+    label: 'BrainStorm Innovation Competition',
+    year: '2023',
+    title: 'Second runner-up',
+    description:
+      'Awarded second runner-up as a team for HYPERTALK, an app designed to make communication more accessible through sign-language translation.',
+  },
+  {
+    value: '04',
+    label: 'ENIGMA 24 · Crack the Code',
+    year: '2024',
+    title: 'Fourth place · Finals',
+    description:
+      'Placed fourth as a team in the finals of the ENIGMA 24 Crack the Code hackathon.',
+  },
+  {
+    value: '08',
+    label: 'MoraXtreme 8.0',
+    year: '2023',
+    title: 'Eighth place',
+    description:
+      'Secured eighth place as a team in a field of more than 300 teams.',
   },
 ] as const
 
