@@ -8,7 +8,7 @@ Source mirror for the published `kavindu-damsith-65/kavindu-damsith-65` profile.
 - **Bio:** Full-stack developer building web products, cloud systems, and applied AI. University of Moratuwa CSE · Maple Wraps & ForkNetRT.
 - **Website:** https://kavindudamsith.tech/
 - **Location:** Sri Lanka
-- **Contact:** kavindudamsith65@gmail.com
+- **Contact:** kavindudamsithoff@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/kavindu-damsith-86696722a/
 
 ## Pin shortlist

@@ -3,7 +3,7 @@ export const profile = {
   shortName: 'Kavindu',
   role: 'Full-stack Developer',
   location: 'Kegalle District, Sri Lanka',
-  email: 'kavindudamsith65@gmail.com',
+  email: 'kavindudamsithoff@gmail.com',
   github: 'https://github.com/kavindu-damsith-65',
   linkedin: 'https://www.linkedin.com/in/kavindu-damsith-86696722a/',
   avatar: './images/kavindu-portrait.jpg',

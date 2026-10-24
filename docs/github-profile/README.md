@@ -9,7 +9,7 @@
 <p align="center">
   <a href="https://kavindudamsith.tech/"><img src="https://img.shields.io/badge/Explore_my_Portfolio-0B1224?style=for-the-badge&logo=googlechrome&logoColor=70A5FD" alt="Portfolio" /></a>
   <a href="https://www.linkedin.com/in/kavindu-damsith-86696722a/"><img src="https://img.shields.io/badge/Let's_connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-  <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=kavindudamsith65%40gmail.com"><img src="https://img.shields.io/badge/Send_an_email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Kavindu at kavindudamsith65@gmail.com" /></a>
+  <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=kavindudamsithoff%40gmail.com"><img src="https://img.shields.io/badge/Send_an_email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Kavindu at kavindudamsithoff@gmail.com" /></a>
 </p>
 
 <p align="center">
@@ -164,5 +164,5 @@ CURRENT FOCUS
 </p>
 
 <p align="center">
-  <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=kavindudamsith65%40gmail.com"><img src="https://img.shields.io/badge/kavindudamsith65%40gmail.com-Contact_me-4f86ff?style=for-the-badge&labelColor=0b1224&logo=gmail&logoColor=white" alt="Email Kavindu at kavindudamsith65@gmail.com" /></a>
+  <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=kavindudamsithoff%40gmail.com"><img src="https://img.shields.io/badge/kavindudamsithoff%40gmail.com-Contact_me-4f86ff?style=for-the-badge&labelColor=0b1224&logo=gmail&logoColor=white" alt="Email Kavindu at kavindudamsithoff@gmail.com" /></a>
 </p>
